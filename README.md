@@ -134,7 +134,7 @@
   }
 }
 ```
-* 访问一个 Video: [http://121.42.217.4:8080/TJUSTV/videos/{id}]([http://121.42.217.4:8080/TJUSTV/videos/22](http://121.42.217.4:8080/TJUSTV/videos/22))
+* 访问编号为{videoId} Video: [http://121.42.217.4:8080/TJUSTV/videos/{videoId}]([http://121.42.217.4:8080/TJUSTV/videos/22](http://121.42.217.4:8080/TJUSTV/videos/22))
 	* method: get
 	* parameter: null
 	* example result:
@@ -208,5 +208,19 @@
   }
 }
 ```
+
+## 3、视频点赞
+* 编号为 {videoId} 的视频点赞：[http://121.42.217.4:8080/TJUSTV/videos/{videoId}/praise]([http://121.42.217.4:8080/TJUSTV/videos/20/praise](http://121.42.217.4:8080/TJUSTV/videos/20/praise))
+	* method:  get	
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": null
+}
+```
+
+## 4、视频评论
 
 	 
