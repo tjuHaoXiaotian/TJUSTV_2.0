@@ -209,7 +209,7 @@
 }
 ```
 
-## 3、视频点赞
+## 3、视频点赞相关接口
 * 编号为 {videoId} 的视频点赞：[http://121.42.217.4:8080/TJUSTV/videos/{videoId}/praise](http://121.42.217.4:8080/TJUSTV/videos/20/praise)
 	* method:  get	
 	* example result:
@@ -221,6 +221,25 @@
 }
 ```
 
-## 4、视频评论
+## 4、视频评论相关接口
+
+* 编号为 {userId} 的用户评论某视频：[http://121.42.217.4:8080/TJUSTV/users/{userId}/comments](http://121.42.217.4:8080/TJUSTV/users/6/comments)
+	*  method: post
+	*  header: Content-Type=application/json
+	*  request-Body: 
+	    ```js
+	    {
+  		 "ref_video_Id":20,
+   		 "content":"琅琊榜真好看！！！！！！！1"
+	    }
+	    ```
+	* example result:
+	 ```js
+	 {
+            "state": 200,
+            "message": "操作成功",
+            "data": null
+        }
+       ```	 
 
 	 
