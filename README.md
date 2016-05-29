@@ -36,8 +36,8 @@
 ```
 * 根据name检索Video：[http://121.42.217.4:8080/TJUSTV/videos?key=琅琊榜](http://121.42.217.4:8080/TJUSTV/videos?key=琅琊榜)
 	*   method: get
-	*   paramter: key={value}
-	*   respones: application/json
+	*   parameter: key={value}
+	*   response: application/json
 	*   example result:
 ```js
 {
@@ -68,4 +68,6 @@
   }
 }
 ```
-
+* 根据类型查询Video：[http://121.42.217.4:8080/TJUSTV/videos?type=4]([http://121.42.217.4:8080/TJUSTV/videos?type=4](http://121.42.217.4:8080/TJUSTV/videos?type=4))
+    * method: get
+    * parameter: type={value}      >     value 取值：0，1，2，3，4，5，6
