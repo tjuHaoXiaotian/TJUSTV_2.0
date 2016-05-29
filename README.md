@@ -2,7 +2,7 @@
 
 ## 1、Videos 相关接口
 * 访问所有Video：[http://121.42.217.4:8080/TJUSTV/videos](http://121.42.217.4:8080/TJUSTV/videos)
-    *  method: get
+    *  method: GET
     *  parameter:null
     *  response: application/json
     *  example result:
@@ -35,7 +35,7 @@
 }    
 ```
 * 根据name检索Video：[http://121.42.217.4:8080/TJUSTV/videos?key=琅琊榜](http://121.42.217.4:8080/TJUSTV/videos?key=琅琊榜)
-	*   method: get
+	*   method: GET
 	*   parameter: key={value}
 	*   response: application/json
 	*   example result:
@@ -69,7 +69,7 @@
 }
 ```
 * 根据类型查询Video：[http://121.42.217.4:8080/TJUSTV/videos?type=4](http://121.42.217.4:8080/TJUSTV/videos?type=4)
-    * method: get
+    * method: GET
     * parameter: type={value}   _value 取值 0~6 整数  ： 0 热门，1 精选，2 经典，3 最新，4 游戏，5 搞笑，6 学视_
     * response: application/json
     * example result:
@@ -102,7 +102,7 @@
 }
 ```
 * 获取首页顶栏轮播视频：[http://121.42.217.4:8080/TJUSTV/videos/index](http://121.42.217.4:8080/TJUSTV/videos/index)
-	* method: get 
+	* method: GET 
 	* parameter: null
 	* response type: application/json
 	* example result:
@@ -135,7 +135,7 @@
 }
 ```
 * 访问编号为{videoId} Video: [http://121.42.217.4:8080/TJUSTV/videos/{videoId}](http://121.42.217.4:8080/TJUSTV/videos/22)
-	* method: get
+	* method: GET
 	* parameter: null
 	* example result:
 ```js
@@ -168,7 +168,7 @@
 ## 2、收藏相关接口
 * 编号为 {userId} 的用户收藏编号为 {videoId} 的视频：
   [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections](http://121.42.217.4:8080/TJUSTV/users/6/collections)
-	* method: post
+	* method: POST
 	* parameter: videoId={videoId}
 	* example result:
 ```js
@@ -181,7 +181,7 @@
 }
 ```
 * 编号为 {userId} 的用户取消编号为{collectionId}的收藏：[http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/{collectionId}](http://121.42.217.4:8080/TJUSTV/users/6/collections/2)
-	* method: delete
+	* method: DELETE
 	* example result:
 ```js
 {
@@ -191,7 +191,7 @@
 }
 ```
 * 查看编号为 userId 的用户全部收藏 [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/](http://121.42.217.4:8080/TJUSTV/users/6/collections/)
-	* method: get
+	* method: GET
 	* example result:
 ```js
 {
@@ -211,7 +211,7 @@
 
 ## 3、视频点赞相关接口
 * 编号为 {videoId} 的视频点赞：[http://121.42.217.4:8080/TJUSTV/videos/{videoId}/praise](http://121.42.217.4:8080/TJUSTV/videos/20/praise)
-	* method:  get	
+	* method:  GET	
 	* example result:
 ```js
 {
@@ -224,22 +224,61 @@
 ## 4、视频评论相关接口
 
 * 编号为 {userId} 的用户评论某视频：[http://121.42.217.4:8080/TJUSTV/users/{userId}/comments](http://121.42.217.4:8080/TJUSTV/users/6/comments)
-	*  method: post
+	*  method: POST
 	*  header: Content-Type=application/json
 	*  request-Body: 
-	    ```js
-	    {
-  		 "ref_video_Id":20,
-   		 "content":"琅琊榜真好看！！！！！！！1"
-	    }
-	    ```
+```js
+{
+   "ref_video_Id":20,
+   "content":"琅琊榜真好看！！！！！！！1"
+}
+```
+	* example result：
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": null
+}
+```
+* 查看编号为 {videoId} 的视频全部评论：[http://121.42.217.4:8080/TJUSTV/videos/{videoId}/comments](http://121.42.217.4:8080/TJUSTV/videos/20/comments)
+	* method: GET
 	* example result:
-	 ```js
-	 {
-            "state": 200,
-            "message": "操作成功",
-            "data": null
-        }
-       ```	 
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": {
+    "comments": [
+      {
+        "commentId": 1,
+        "content": "琅琊榜真好看！！！！！！！1",
+        "createtime": 1464509637000,
+        "user": {
+          "userId": 6,
+          "account": "haoxiaotian",
+          "aboutMe": null,
+          "avatarPath": null,
+          "lastIp": null,
+          "createtime": 1460823458000,
+          "updatetime": 1460829138000
+        },
+        "ref_video_Id": 20
+      }
+    ]
+  }
+}
+```
+* 编号为 {userId} 的用户删除编号为 {commentId} 的评论：[http://121.42.217.4:8080/TJUSTV/users/6/comments/1](http://121.42.217.4:8080/TJUSTV/users/6/comments/1)
+	* method: DELETE
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": null
+}
+```
+	
 
-	 
+	
