@@ -8,3 +8,7 @@
 ```js
 console.log('sonething');
 ```
+
+```java
+   System.out.println("");
+```
