@@ -70,4 +70,5 @@
 ```
 * 根据类型查询Video：[http://121.42.217.4:8080/TJUSTV/videos?type=4]([http://121.42.217.4:8080/TJUSTV/videos?type=4](http://121.42.217.4:8080/TJUSTV/videos?type=4))
     * method: get
-    * parameter: type={value}      >     value 取值：0，1，2，3，4，5，6
+    * parameter: type={value}      	
+>            value 取值 0~6 整数  ： 0 热门，1 精选，2 经典，3 最新，4 游戏，5 搞笑，6 学视        
