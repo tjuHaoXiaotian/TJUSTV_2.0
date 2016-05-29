@@ -166,17 +166,7 @@ public class VideoController extends BaseController {
     }
 
 
-    /**
-     * 访问一个 video 的所有评论
-     * @return
-     */
-    @RequestMapping(value = "/{id}/comments",method = RequestMethod.GET)
-    public @ResponseBody
-    StateCode getVideoComments(@PathVariable int id ) {
-        StateCode stateCode =  StateCode.buildCode(BizCode.SUCCESS);
-        stateCode.addData("comments", commentService.getAll(id));
-        return stateCode;
-    }
+
 
     /**
      * 更新一个 video
@@ -195,6 +185,17 @@ public class VideoController extends BaseController {
     }
 
 
+    /**
+     * 访问一个 video 的所有评论
+     * @return
+     */
+    @RequestMapping(value = "/{id}/comments",method = RequestMethod.GET)
+    public @ResponseBody
+    StateCode getVideoComments(@PathVariable int id ) {
+        StateCode stateCode =  StateCode.buildCode(BizCode.SUCCESS);
+        stateCode.addData("comments", commentService.getAll(id));
+        return stateCode;
+    }
 
     /**
      * 赞

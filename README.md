@@ -70,5 +70,143 @@
 ```
 * 根据类型查询Video：[http://121.42.217.4:8080/TJUSTV/videos?type=4]([http://121.42.217.4:8080/TJUSTV/videos?type=4](http://121.42.217.4:8080/TJUSTV/videos?type=4))
     * method: get
-    * parameter: type={value}      	
->>value 取值 0~6 整数  ： 0 热门，1 精选，2 经典，3 最新，4 游戏，5 搞笑，6 学视        
+    * parameter: type={value}   _value 取值 0~6 整数  ： 0 热门，1 精选，2 经典，3 最新，4 游戏，5 搞笑，6 学视_
+    * response: application/json
+    * example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": {
+    "videos": [
+      {
+        "videoId": 20,
+        "name": "《琅琊榜》MV-刘涛《红颜旧》_标清.flv",
+        "description": "视频文件：《琅琊榜》MV-刘涛《红颜旧》_标清.flv",
+        "performer": "xx 明星",
+        "album": "xx 电视剧",
+        "path": "http://121.42.217.4:8080/upload/video/2016_05_29/15504856250368481/2016_05_29_10_32_13_15504856274117801.flv",
+        "imagePath": "http://121.42.217.4:8080/upload/video/2016_05_29/15504856250368481/2016_05_29_10_32_13_15504856274117801.jpg",
+        "praise": 0,
+        "createtime": 1464489135000,
+        "updatetime": 1464489309000,
+        "size": 8106010,
+        "duration": "00:03:46.02",
+        "visitedTimes": 0,
+        "targetDir": "/alidata/upload/video/2016_05_29/15504856250368481",
+        "state": 0,
+        "type": 4,
+        "index": 1
+      }]
+  }
+}
+```
+* 获取首页顶栏轮播视频：[http://121.42.217.4:8080/TJUSTV/videos/index]([http://121.42.217.4:8080/TJUSTV/videos/index](http://121.42.217.4:8080/TJUSTV/videos/index))
+	* method: get 
+	* parameter: null
+	* response type: application/json
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": {
+    "videos": [
+      {
+        "videoId": 20,
+        "name": "《琅琊榜》MV-刘涛《红颜旧》_标清.flv",
+        "description": "视频文件：《琅琊榜》MV-刘涛《红颜旧》_标清.flv",
+        "performer": "xx 明星",
+        "album": "xx 电视剧",
+        "path": "http://121.42.217.4:8080/upload/video/2016_05_29/15504856250368481/2016_05_29_10_32_13_15504856274117801.flv",
+        "imagePath": "http://121.42.217.4:8080/upload/video/2016_05_29/15504856250368481/2016_05_29_10_32_13_15504856274117801.jpg",
+        "praise": 0,
+        "createtime": 1464489135000,
+        "updatetime": 1464489309000,
+        "size": 8106010,
+        "duration": "00:03:46.02",
+        "visitedTimes": 0,
+        "targetDir": "/alidata/upload/video/2016_05_29/15504856250368481",
+        "state": 0,
+        "type": 4,
+        "index": 1
+      }]
+  }
+}
+```
+* 访问一个 Video: [http://121.42.217.4:8080/TJUSTV/videos/{id}]([http://121.42.217.4:8080/TJUSTV/videos/22](http://121.42.217.4:8080/TJUSTV/videos/22))
+	* method: get
+	* parameter: null
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": {
+    "video": {
+      "videoId": 22,
+      "name": "电视剧《武媚娘传奇》 插曲《敢为天下先》-张靓颖_标清.flv",
+      "description": "视频文件：电视剧《武媚娘传奇》 插曲《敢为天下先》-张靓颖_标清.flv",
+      "performer": "xx 明星",
+      "album": "xx 电视剧",
+      "path": "http://121.42.217.4:8080/upload/video/2016_05_29/15504926042700957/2016_05_29_10_33_23_15504926063118501.flv",
+      "imagePath": "http://121.42.217.4:8080/upload/video/2016_05_29/15504926042700957/2016_05_29_10_33_23_15504926063118501.jpg",
+      "praise": 0,
+      "createtime": 1464489203000,
+      "updatetime": 1464489203000,
+      "size": 10568719,
+      "duration": "00:04:54.20",
+      "visitedTimes": 0,
+      "targetDir": "/alidata/upload/video/2016_05_29/15504926042700957",
+      "state": 0,
+      "type": 4,
+      "index": 0
+    }
+  }
+}
+```
+## 2、收藏相关接口
+* 编号为 {userId} 的用户收藏编号为 {videoId} 的视频：
+  [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections]([http://121.42.217.4:8080/TJUSTV/users/6/collections](http://121.42.217.4:8080/TJUSTV/users/6/collections))
+	* method: post
+	* parameter: videoId={videoId}
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": {
+    "collectionId": 1
+  }
+}
+```
+* 编号为 {userId} 的用户取消编号为{collectionId}的收藏：[http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/{collectionId}]([http://121.42.217.4:8080/TJUSTV/users/6/collections/2](http://121.42.217.4:8080/TJUSTV/users/6/collections/2))
+	* method: delete
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": null
+}
+```
+* 查看编号为 userId 的用户全部收藏 [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/]([http://121.42.217.4:8080/TJUSTV/users/6/collections/](http://121.42.217.4:8080/TJUSTV/users/6/collections/))
+	* method: get
+	* example result:
+```js
+{
+  "state": 200,
+  "message": "操作成功",
+  "data": {
+    "collections": [
+      {
+        "collectionId": 1,
+        "userId": 6,
+        "videoId": 22
+      }
+    ]
+  }
+}
+```
+
+	 
