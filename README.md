@@ -68,7 +68,7 @@
   }
 }
 ```
-* 根据类型查询Video：[http://121.42.217.4:8080/TJUSTV/videos?type=4]([http://121.42.217.4:8080/TJUSTV/videos?type=4](http://121.42.217.4:8080/TJUSTV/videos?type=4))
+* 根据类型查询Video：[http://121.42.217.4:8080/TJUSTV/videos?type=4](http://121.42.217.4:8080/TJUSTV/videos?type=4)
     * method: get
     * parameter: type={value}   _value 取值 0~6 整数  ： 0 热门，1 精选，2 经典，3 最新，4 游戏，5 搞笑，6 学视_
     * response: application/json
@@ -101,7 +101,7 @@
   }
 }
 ```
-* 获取首页顶栏轮播视频：[http://121.42.217.4:8080/TJUSTV/videos/index]([http://121.42.217.4:8080/TJUSTV/videos/index](http://121.42.217.4:8080/TJUSTV/videos/index))
+* 获取首页顶栏轮播视频：[http://121.42.217.4:8080/TJUSTV/videos/index](http://121.42.217.4:8080/TJUSTV/videos/index)
 	* method: get 
 	* parameter: null
 	* response type: application/json
@@ -134,7 +134,7 @@
   }
 }
 ```
-* 访问编号为{videoId} Video: [http://121.42.217.4:8080/TJUSTV/videos/{videoId}]([http://121.42.217.4:8080/TJUSTV/videos/22](http://121.42.217.4:8080/TJUSTV/videos/22))
+* 访问编号为{videoId} Video: [http://121.42.217.4:8080/TJUSTV/videos/{videoId}](http://121.42.217.4:8080/TJUSTV/videos/22)
 	* method: get
 	* parameter: null
 	* example result:
@@ -167,7 +167,7 @@
 ```
 ## 2、收藏相关接口
 * 编号为 {userId} 的用户收藏编号为 {videoId} 的视频：
-  [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections]([http://121.42.217.4:8080/TJUSTV/users/6/collections](http://121.42.217.4:8080/TJUSTV/users/6/collections))
+  [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections](http://121.42.217.4:8080/TJUSTV/users/6/collections)
 	* method: post
 	* parameter: videoId={videoId}
 	* example result:
@@ -180,7 +180,7 @@
   }
 }
 ```
-* 编号为 {userId} 的用户取消编号为{collectionId}的收藏：[http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/{collectionId}]([http://121.42.217.4:8080/TJUSTV/users/6/collections/2](http://121.42.217.4:8080/TJUSTV/users/6/collections/2))
+* 编号为 {userId} 的用户取消编号为{collectionId}的收藏：[http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/{collectionId}](http://121.42.217.4:8080/TJUSTV/users/6/collections/2)
 	* method: delete
 	* example result:
 ```js
@@ -190,7 +190,7 @@
   "data": null
 }
 ```
-* 查看编号为 userId 的用户全部收藏 [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/]([http://121.42.217.4:8080/TJUSTV/users/6/collections/](http://121.42.217.4:8080/TJUSTV/users/6/collections/))
+* 查看编号为 userId 的用户全部收藏 [http://121.42.217.4:8080/TJUSTV/users/{userId}/collections/](http://121.42.217.4:8080/TJUSTV/users/6/collections/)
 	* method: get
 	* example result:
 ```js
@@ -210,7 +210,7 @@
 ```
 
 ## 3、视频点赞
-* 编号为 {videoId} 的视频点赞：[http://121.42.217.4:8080/TJUSTV/videos/{videoId}/praise]([http://121.42.217.4:8080/TJUSTV/videos/20/praise](http://121.42.217.4:8080/TJUSTV/videos/20/praise))
+* 编号为 {videoId} 的视频点赞：[http://121.42.217.4:8080/TJUSTV/videos/{videoId}/praise](http://121.42.217.4:8080/TJUSTV/videos/20/praise)
 	* method:  get	
 	* example result:
 ```js
