@@ -269,7 +269,7 @@
   }
 }
 ```
-* 编号为 {userId} 的用户删除编号为 {commentId} 的评论：[http://121.42.217.4:8080/TJUSTV/users/6/comments/1](http://121.42.217.4:8080/TJUSTV/users/6/comments/1)
+* 编号为 {userId} 的用户删除编号为 {commentId} 的评论：[http://121.42.217.4:8080/TJUSTV/users/{userId}/comments/{commentId}](http://121.42.217.4:8080/TJUSTV/users/6/comments/1)
 	* method: DELETE
 	* example result:
 ```js
